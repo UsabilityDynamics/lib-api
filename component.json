@@ -13,10 +13,10 @@
   },  
   "files": [
     "files/api-schema.json",
-    "files/lib/api.php"
   ],
   "scripts": [
-    "scripts/api.js"
+    "scripts/api.js",
+    "scripts/lib/api.php"
   ],
   "authors": [
     {
