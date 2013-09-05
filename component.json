@@ -13,7 +13,7 @@
   },  
   "files": [
     "files/api-schema.json",
-    "lib/api.php"
+    "files/lib/api.php"
   ],
   "scripts": [
     "scripts/api.js"
