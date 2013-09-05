@@ -28,10 +28,4 @@ lib-cov:
 
 clean:
 	rm -fr static/lib-cov
-	rm -fr static/assets
-	rm -fr static/classes
-	rm -fr static/files
-	rm -fr static/modules
-	rm -f static/api.js
-	rm -f static/data.json
-	rm -f static/index.html
+	rm -fr static/codex

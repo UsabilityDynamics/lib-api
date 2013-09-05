@@ -1,27 +1,24 @@
 {
-  "name": "{{name}}",
+  "name": "ud-lib-api",
   "version": "0.0.1",
-  "description": "{{description}}",
-  "homepage": "http://github.com/UsabilityDynamics/{{name}}",
+  "description": "ud-lib-api",
+  "homepage": "http://github.com/UsabilityDynamics/ud-lib-api",
   "private": false,
   "repository": {
     "type": "git",
-    "url": "https://github.com/UsabilityDynamics/{{name}}"
+    "url": "https://github.com/UsabilityDynamics/ud-lib-api"
   },
   "dependencies": {
     "usabilitydynamics/ud-lib-utility": "*"
   },  
   "lib": [
-    "lib/core.php"
+    "lib/api.php"
   ],
   "files": [
-    "files/schema.json"
-  ],
-  "styles": [
-    "styles/index.css"
+    "files/api-schema.json"
   ],
   "scripts": [
-    "scripts/index.js"
+    "scripts/api.js"
   ],
   "authors": [
     {

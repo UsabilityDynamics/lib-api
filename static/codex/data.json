@@ -1,0 +1,119 @@
+{
+    "project": {
+        "name": "{{name}}",
+        "description": "{{description}}",
+        "version": "0.0.1",
+        "url": "https://github.com/UsabilityDynamics/{{name}}/",
+        "logo": "http://a3d72a45d111006ec192-ec5b80a12b0b09b4d52373336afb4254.r80.cf1.rackcdn.com/usability-dynamics.png"
+    },
+    "files": {
+        "lib/api.php": {
+            "name": "lib/api.php",
+            "modules": {},
+            "classes": {
+                "UD.API": 1
+            },
+            "fors": {
+                "UD.API": 1
+            },
+            "namespaces": {
+                "UD": 1
+            }
+        },
+        "scripts/api.js": {
+            "name": "scripts/api.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        }
+    },
+    "modules": {},
+    "classes": {
+        "UD.API": {
+            "name": "UD.API",
+            "shortname": "API",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "namespace": "UD",
+            "file": "lib/api.php",
+            "line": 12,
+            "description": "UD Assets Compiler Functions\n\nDescription: Assets Compiler\n\nNotice: It's not static class. Object should be initialized",
+            "author": "team@UD",
+            "version": "0.1.1",
+            "subpackage": "Functions"
+        }
+    },
+    "classitems": [
+        {
+            "file": "lib/api.php",
+            "line": 2,
+            "description": "-",
+            "author": "team@UD",
+            "version": "0.0.1",
+            "class": "UD.API",
+            "namespace": "UD"
+        },
+        {
+            "file": "lib/api.php",
+            "line": 27,
+            "description": "Constructor for the UD API class.",
+            "author": "potanin@UD",
+            "version": "0.0.1",
+            "since": "0.0.1",
+            "itemtype": "method",
+            "name": "__construct",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "options",
+                    "description": "Configuration.",
+                    "type": "Object",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "Instance.",
+                "type": "Object"
+            },
+            "class": "UD.API",
+            "namespace": "UD"
+        },
+        {
+            "file": "scripts/api.js",
+            "line": 1,
+            "description": "UD API Scripts",
+            "class": "",
+            "namespace": "UD"
+        }
+    ],
+    "warnings": [
+        {
+            "message": "unknown tag: version",
+            "line": " lib/api.php:2"
+        },
+        {
+            "message": "unknown tag: version",
+            "line": " lib/api.php:12"
+        },
+        {
+            "message": "unknown tag: subpackage",
+            "line": " lib/api.php:12"
+        },
+        {
+            "message": "unknown tag: version",
+            "line": " lib/api.php:27"
+        },
+        {
+            "message": "Missing item type\n-",
+            "line": " lib/api.php:2"
+        },
+        {
+            "message": "Missing item type\nUD API Scripts",
+            "line": " scripts/api.js:1"
+        }
+    ]
+}
