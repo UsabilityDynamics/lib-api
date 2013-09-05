@@ -11,11 +11,9 @@
   "dependencies": {
     "usabilitydynamics/ud-lib-utility": "*"
   },  
-  "lib": [
-    "lib/api.php"
-  ],
   "files": [
-    "files/api-schema.json"
+    "files/api-schema.json",
+    "lib/api.php"
   ],
   "scripts": [
     "scripts/api.js"
