@@ -12,7 +12,7 @@
     "usabilitydynamics/ud-lib-utility": "*"
   },  
   "files": [
-    "files/api-schema.json",
+    "files/api-schema.json"
   ],
   "scripts": [
     "scripts/api.js",
