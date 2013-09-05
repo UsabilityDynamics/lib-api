@@ -16,7 +16,7 @@
   ],
   "scripts": [
     "scripts/api.js",
-    "scripts/lib/api.php"
+    "scripts/api.php"
   ],
   "authors": [
     {
