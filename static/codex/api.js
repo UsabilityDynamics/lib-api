@@ -1,9 +1,17 @@
 YUI.add("yuidoc-meta", function(Y) {
    Y.YUIDoc = { meta: {
     "classes": [
-        "UD.API"
+        "API"
     ],
-    "modules": [],
-    "allModules": []
+    "modules": [
+        "UsabilityDynamics"
+    ],
+    "allModules": [
+        {
+            "displayName": "UsabilityDynamics",
+            "name": "UsabilityDynamics",
+            "description": "-"
+        }
+    ]
 } };
 });

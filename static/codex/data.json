@@ -1,119 +1,234 @@
 {
     "project": {
-        "name": "{{name}}",
-        "description": "{{description}}",
+        "name": "lib-api",
+        "description": "lib-api",
         "version": "0.0.1",
-        "url": "https://github.com/UsabilityDynamics/{{name}}/",
+        "url": "https://github.com/UsabilityDynamics/lib-api/",
         "logo": "http://a3d72a45d111006ec192-ec5b80a12b0b09b4d52373336afb4254.r80.cf1.rackcdn.com/usability-dynamics.png"
     },
     "files": {
-        "lib/api.php": {
-            "name": "lib/api.php",
-            "modules": {},
-            "classes": {
-                "UD.API": 1
-            },
-            "fors": {
-                "UD.API": 1
-            },
-            "namespaces": {
-                "UD": 1
-            }
-        },
         "scripts/api.js": {
             "name": "scripts/api.js",
             "modules": {},
             "classes": {},
             "fors": {},
             "namespaces": {}
+        },
+        "scripts/api.php": {
+            "name": "scripts/api.php",
+            "modules": {
+                "UsabilityDynamics": 1
+            },
+            "classes": {
+                "API": 1
+            },
+            "fors": {
+                "API": 1
+            },
+            "namespaces": {}
         }
     },
-    "modules": {},
+    "modules": {
+        "UsabilityDynamics": {
+            "name": "UsabilityDynamics",
+            "submodules": {},
+            "classes": {
+                "API": 1
+            },
+            "fors": {
+                "API": 1
+            },
+            "namespaces": {},
+            "tag": "module",
+            "file": "scripts/api.php",
+            "line": 11,
+            "description": "-",
+            "author": "team@UD",
+            "version": "0.0.1"
+        }
+    },
     "classes": {
-        "UD.API": {
-            "name": "UD.API",
+        "API": {
+            "name": "API",
             "shortname": "API",
             "classitems": [],
             "plugins": [],
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "namespace": "UD",
-            "file": "lib/api.php",
-            "line": 12,
-            "description": "UD Assets Compiler Functions\n\nDescription: Assets Compiler\n\nNotice: It's not static class. Object should be initialized",
+            "module": "UsabilityDynamics",
+            "namespace": "",
+            "file": "scripts/api.php",
+            "line": 11,
+            "description": "UD API",
             "author": "team@UD",
-            "version": "0.1.1",
-            "subpackage": "Functions"
+            "version": "0.1.1"
         }
     },
     "classitems": [
         {
-            "file": "lib/api.php",
-            "line": 2,
-            "description": "-",
-            "author": "team@UD",
-            "version": "0.0.1",
-            "class": "UD.API",
-            "namespace": "UD"
+            "file": "scripts/api.js",
+            "line": 1,
+            "description": "UD API Scripts",
+            "class": "API"
         },
         {
-            "file": "lib/api.php",
-            "line": 27,
+            "file": "scripts/api.php",
+            "line": 21,
+            "description": "API Class version.",
+            "itemtype": "property",
+            "name": "$version",
+            "type": "{Object}",
+            "class": "API",
+            "module": "UsabilityDynamics"
+        },
+        {
+            "file": "scripts/api.php",
+            "line": 29,
             "description": "Constructor for the UD API class.",
             "author": "potanin@UD",
             "version": "0.0.1",
-            "since": "0.0.1",
             "itemtype": "method",
             "name": "__construct",
             "is_constructor": 1,
             "params": [
                 {
-                    "name": "options",
-                    "description": "Configuration.",
-                    "type": "Object",
-                    "optional": true
+                    "name": "array",
+                    "description": "$options"
+                }
+            ],
+            "class": "API",
+            "module": "UsabilityDynamics"
+        },
+        {
+            "file": "scripts/api.php",
+            "line": 43,
+            "description": "Generates API routes",
+            "author": "potanin@UD",
+            "class": "API",
+            "module": "UsabilityDynamics"
+        },
+        {
+            "file": "scripts/api.php",
+            "line": 180,
+            "description": "Adds rewrite rules for API methods.\nBased on $wp_properties[ '_api_routes' ]",
+            "author": "peshkov@UD",
+            "class": "API",
+            "module": "UsabilityDynamics"
+        },
+        {
+            "file": "scripts/api.php",
+            "line": 254,
+            "description": "API action handler.\nPerforms API method and returns result or error.",
+            "author": "peshkov@UD",
+            "params": [
+                {
+                    "name": "array",
+                    "description": "$args"
                 }
             ],
             "return": {
-                "description": "Instance.",
-                "type": "Object"
+                "description": "bool|WP_Error|mixed"
             },
-            "class": "UD.API",
-            "namespace": "UD"
+            "class": "API",
+            "module": "UsabilityDynamics"
         },
         {
-            "file": "scripts/api.js",
-            "line": 1,
-            "description": "UD API Scripts",
-            "class": "",
-            "namespace": "UD"
+            "file": "scripts/api.php",
+            "line": 282,
+            "description": "Determine if API request has api_key and it's correct\nThe API requests must be safety.",
+            "class": "API",
+            "module": "UsabilityDynamics"
+        },
+        {
+            "file": "scripts/api.php",
+            "line": 397,
+            "description": "Set API route.\nParses route's data and fixes its structure",
+            "author": "peshkov@UD",
+            "params": [
+                {
+                    "name": "array",
+                    "description": "$data"
+                }
+            ],
+            "return": {
+                "description": "array|bool"
+            },
+            "class": "API",
+            "module": "UsabilityDynamics"
+        },
+        {
+            "file": "scripts/api.php",
+            "line": 488,
+            "description": "Outputs JSON with valid headers and dies.",
+            "updated": "1.0.6 - Added WP_Error object support.",
+            "since": "1.0.2",
+            "author": "potanin@UD",
+            "class": "API",
+            "module": "UsabilityDynamics"
+        },
+        {
+            "file": "scripts/api.php",
+            "line": 520,
+            "description": "Outputs XML with valid headers and dies.",
+            "updated": "1.0.4",
+            "author": "potanin@UD",
+            "class": "API",
+            "module": "UsabilityDynamics"
         }
     ],
     "warnings": [
         {
             "message": "unknown tag: version",
-            "line": " lib/api.php:2"
+            "line": " scripts/api.php:2"
         },
         {
             "message": "unknown tag: version",
-            "line": " lib/api.php:12"
-        },
-        {
-            "message": "unknown tag: subpackage",
-            "line": " lib/api.php:12"
+            "line": " scripts/api.php:11"
         },
         {
             "message": "unknown tag: version",
-            "line": " lib/api.php:27"
+            "line": " scripts/api.php:29"
         },
         {
-            "message": "Missing item type\n-",
-            "line": " lib/api.php:2"
+            "message": "unknown tag: updated",
+            "line": " scripts/api.php:488"
+        },
+        {
+            "message": "unknown tag: updated",
+            "line": " scripts/api.php:520"
         },
         {
             "message": "Missing item type\nUD API Scripts",
             "line": " scripts/api.js:1"
+        },
+        {
+            "message": "Missing item type\nGenerates API routes",
+            "line": " scripts/api.php:43"
+        },
+        {
+            "message": "Missing item type\nAdds rewrite rules for API methods.\nBased on $wp_properties[ '_api_routes' ]",
+            "line": " scripts/api.php:180"
+        },
+        {
+            "message": "Missing item type\nAPI action handler.\nPerforms API method and returns result or error.",
+            "line": " scripts/api.php:254"
+        },
+        {
+            "message": "Missing item type\nDetermine if API request has api_key and it's correct\nThe API requests must be safety.",
+            "line": " scripts/api.php:282"
+        },
+        {
+            "message": "Missing item type\nSet API route.\nParses route's data and fixes its structure",
+            "line": " scripts/api.php:397"
+        },
+        {
+            "message": "Missing item type\nOutputs JSON with valid headers and dies.",
+            "line": " scripts/api.php:488"
+        },
+        {
+            "message": "Missing item type\nOutputs XML with valid headers and dies.",
+            "line": " scripts/api.php:520"
         }
     ]
 }
