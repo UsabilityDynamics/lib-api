@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "usabilitydynamics/lib-utility": "*"
-  },  
+  },
   "schemas": [
     "schemas/api.json"
   ],
