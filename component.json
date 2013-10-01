@@ -11,8 +11,8 @@
   "dependencies": {
     "usabilitydynamics/lib-utility": "*"
   },  
-  "files": [
-    "files/schema/api.json"
+  "schemas": [
+    "schemas/api.json"
   ],
   "libs": [
     "libs/api.php"
