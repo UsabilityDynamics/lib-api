@@ -1,5 +1,5 @@
 {
-  "name": "usabilitydynamics/lib-api",
+  "name": "usabilitydynamics/api",
   "keywords": [ "api" ],
   "type": "library",
   "require": {
