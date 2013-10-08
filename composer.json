@@ -11,6 +11,10 @@
     {
       "type": "vcs",
       "url": "https://github.com/UsabilityDynamics/lib-utility"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/UsabilityDynamics/lib-api"
     }
   ],
   "autoload": {
