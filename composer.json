@@ -1,9 +1,8 @@
 {
-  "name": "usabilitydynamics/api",
+  "name": "usabilitydynamics/lib-api",
   "keywords": [ "api" ],
   "type": "library",
   "require": {
-    "justinrainbow/json-schema": "1.1.*",
     "usabilitydynamics/lib-utility": "*"
   },
   "minimum-stability": "dev",
