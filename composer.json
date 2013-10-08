@@ -4,13 +4,13 @@
   "type": "library",
   "require": {
     "justinrainbow/json-schema": "1.1.*",
-    "usabilitydynamics/lib-utility": ">=0.2.2"
+    "usabilitydynamics/lib-utility": "*"
   },
   "minimum-stability": "dev",
   "repositories": [
     {
       "type": "vcs",
-      "url": "https://github.com/UsabilityDynamics/lib-api"
+      "url": "https://github.com/UsabilityDynamics/lib-utility"
     }
   ],
   "autoload": {
