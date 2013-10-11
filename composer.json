@@ -17,8 +17,7 @@
     }
   ],
   "autoload": {
-    "UsabilityDynamics": "libs/",
-    "files": [ "libs/api.php" ]
+    "files": [ "lib/api.php" ]
   },
   "homepage": "http://github.com/usabilitydynamics/lib-api",
   "authors": [

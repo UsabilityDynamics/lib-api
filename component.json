@@ -14,8 +14,8 @@
   "schemas": [
     "schemas/api.json"
   ],
-  "libs": [
-    "libs/api.php"
+  "lib": [
+    "lib/api.php"
   ],
   "scripts": [
     "scripts/api.js"
