@@ -2,7 +2,7 @@
  * UD API Scripts
  *
  */
-module.exports = function() {
+define( 'lib-api', function libApi() {
   console.log( 'lib-api' );
 
   return {
@@ -10,4 +10,4 @@ module.exports = function() {
     test: true
   }
 
-}
+});

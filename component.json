@@ -1,6 +1,6 @@
 {
   "name": "lib-api",
-  "version": "0.0.1",
+  "version": "0.5.0",
   "description": "lib-api",
   "homepage": "http://github.com/UsabilityDynamics/lib-api",
   "private": false,
@@ -12,13 +12,13 @@
     "usabilitydynamics/lib-utility": "*"
   },
   "schemas": [
-    "schemas/api.json"
+    "static/schemas/api.json"
   ],
   "lib": [
     "lib/api.php"
   ],
   "scripts": [
-    "scripts/api.js"
+    "static/scripts/api.js"
   ],
   "authors": [
     {

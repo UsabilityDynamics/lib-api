@@ -17,7 +17,7 @@
     }
   ],
   "autoload": {
-    "classmap": [ "lib/api.php" ]
+    "classmap": [ "lib" ]
   },
   "homepage": "http://github.com/usabilitydynamics/lib-api",
   "authors": [
