@@ -19,7 +19,7 @@ namespace UsabilityDynamics {
    * @class API
    * @extends Utility
    */
-  class API extends Utility {
+  class API {
 
     /**
      * API Class version.
