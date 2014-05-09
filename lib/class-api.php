@@ -160,6 +160,20 @@ namespace UsabilityDynamics {
     }
 
     /**
+     * List Defined API Routes
+     *
+     * @url http://{domain/{namespace}/v1/routes
+     */
+    static public function listRoutes() {
+      if( !current_user_can( 'read' ) ) {
+        return;
+      }
+      self::send( array(
+        'routes' => API::routes()
+      ) );
+    }
+
+    /**
      * Send Response
      *
      * @todo Add content-type detection for XML response handling.
@@ -171,6 +185,7 @@ namespace UsabilityDynamics {
      */
     public static function send( $data, $headers = array() ) {
 
+      // Make sure we're not cached
       nocache_headers();
 
       if( is_string( $data ) ) {
@@ -187,29 +202,13 @@ namespace UsabilityDynamics {
 
       // Standard Object Response.
       if( ( is_object( $data ) || is_array( $data ) ) && !is_wp_error( $data ) ) {
-
         $data = (object) $data;
-
         if( !isset( $data->ok ) ) {
           $data = (object) ( array( 'ok' => true ) + (array) $data );
         }
-
         return wp_send_json( $data );
       }
 
-    }
-
-    /**
-     * List Defined API Routes
-     */
-    static public function listRoutes() {
-      if( !current_user_can( 'read' ) ) {
-        return;
-      }
-      wp_send_json(array(
-        'ok' => true,
-        'routes' => API::routes()
-      ));
     }
 
     /**
