@@ -92,7 +92,7 @@ namespace UsabilityDynamics {
         'parameters' => $_args->parameters,
         'scopes' => $_args->scopes,
         'detail' => array(
-          'handler' => is_array( $_args->handler ) ? join( '::', $_args->handler ) : $_args->handler,
+          //'handler' => is_array( $_args->handler ) ? join( '::', $_args->handler ) : $_args->handler,
           'url' => add_query_arg( array( 'action' => self::get_path( $path, $_args ) ), admin_url( 'admin-ajax.php' ) ),
           'action' => current_action()
         )
