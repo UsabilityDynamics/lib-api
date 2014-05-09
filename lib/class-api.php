@@ -52,6 +52,26 @@ namespace UsabilityDynamics {
     public static $_routes = Array();
 
     /**
+     * Our constructor, should setup some default routes
+     *
+     * @returns API $this
+     */
+    function __construct(){
+      /** Let's go ahead and add our routes */
+      add_action( 'plugins_loaded', array( $this, 'create_routes' ) );
+      /** Return this */
+      return $this;
+    }
+
+    /**
+     * Creates some of our global routes
+     */
+    public function create_routes(){
+      /** Ok, add our default routes now */
+      self::define( '/v1/routes', array( $this, 'listRoutes' ) );
+    }
+
+    /**
      * Define API Endpoints.
      *
      *    Veneer\API::define( '/merchant-feed/google', array( 'CDO\Application\API\MerchantFeed', 'compute' ) )
@@ -74,13 +94,21 @@ namespace UsabilityDynamics {
         'path' => $path,
         'method' => 'GET',
         'handler' => $handler,
-        'namespace' => self::$namespace,
+        'namespace' => static::$namespace,
         'scopes' => array(),
         'parameters' => array()
       ));
 
       if( !is_callable( $_args->handler ) ) {
         return _doing_it_wrong( 'UsabilityDynamics\Veneer\API::define', 'Handler not callable.', null );
+      }
+
+      /** Determine our handler */
+      $handler = $_args->handler;
+      if( is_array( $handler ) && count( $handler ) == 2 ){
+        if( is_string( $handler[ 0 ] ) && is_string( $handler[ 2 ] ) ){
+          $handler = join( '::', $handler );
+        }
       }
 
       $_route = array(
@@ -92,7 +120,7 @@ namespace UsabilityDynamics {
         'parameters' => $_args->parameters,
         'scopes' => $_args->scopes,
         'detail' => array(
-          'handler' => is_array( $_args->handler ) ? join( '::', $_args->handler ) : $_args->handler,
+          'handler' => $handler,
           'url' => add_query_arg( array( 'action' => self::get_path( $path, $_args ) ), admin_url( 'admin-ajax.php' ) ),
           'action' => current_action()
         )
@@ -114,7 +142,7 @@ namespace UsabilityDynamics {
      *
      * @return array
      */
-    public static function routes( $args = array() ) {
+    public function routes( $args = array() ) {
 
       // Filter.
       $args = (object) Utility::extend( array(), $args);
@@ -172,23 +200,31 @@ namespace UsabilityDynamics {
     }
 
     /**
-     * @param $path
-     * @param $args
-     *
-     * @return mixed|void
+     * List Defined API Routes
      */
-    public static function get_path( $path, $args ) {
-
-      return apply_filters( 'usabilitydynamics::api::get_path', str_replace( '//', '/', ( '/' . ( $args->namespace ? $args->namespace . '/' : '' ) . $path ), $args ) );
-
+    static public function listRoutes() {
+      if( !current_user_can( 'read' ) ) {
+        return;
+      }
+      wp_send_json(array(
+        'ok' => true,
+        'routes' => API::routes()
+      ));
     }
 
+    /**
+     * Utility function
+     */
+    public static function get_path( $path, $args ) {
+      return apply_filters( 'usabilitydynamics::api::get_path', str_replace( '//', '/', ( '/' . ( $args->namespace ? $args->namespace . '/' : '' ) . $path ), $args ) );
+    }
+    /**
+     * Utility function
+     */
     public static function get_url( $path, $args ) {
-
       return apply_filters( 'usabilitydynamics::api::get_url', add_query_arg( array(
         'action' => self::get_path( $path, $args )
       ), admin_url( 'admin-ajax.php' ) ), $args );
-
     }
 
   }
