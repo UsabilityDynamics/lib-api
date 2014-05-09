@@ -88,11 +88,12 @@ namespace UsabilityDynamics {
         'path' => self::get_path( $path, $_args ),
         'namespace' => $_args->namespace,
         'method' => $_args->method,
-        'url' => add_query_arg( array( 'action' => self::get_path( $path, $_args ) ), admin_url( 'admin-ajax.php' ) ),
+        'url' => self::get_url( $path, $_args ),
         'parameters' => $_args->parameters,
         'scopes' => $_args->scopes,
         'detail' => array(
           'handler' => is_array( $_args->handler ) ? join( '::', $_args->handler ) : $_args->handler,
+          'url' => add_query_arg( array( 'action' => self::get_path( $path, $_args ) ), admin_url( 'admin-ajax.php' ) ),
           'action' => current_action()
         )
       );
@@ -179,6 +180,14 @@ namespace UsabilityDynamics {
     public static function get_path( $path, $args ) {
 
       return apply_filters( 'usabilitydynamics::api::get_path', str_replace( '//', '/', ( '/' . ( $args->namespace ? $args->namespace . '/' : '' ) . $path ), $args ) );
+
+    }
+
+    public static function get_url( $path, $args ) {
+
+      return apply_filters( 'usabilitydynamics::api::get_url', add_query_arg( array(
+        'action' => self::get_path( $path, $args )
+      ), admin_url( 'admin-ajax.php' ) ), $args );
 
     }
 

@@ -1,3 +1,7 @@
+## Filters
+* usabilitydynamics::api::get_path
+* usabilitydynamics::api::get_url
+
 ## License
 
 (The MIT License)
