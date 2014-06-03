@@ -137,8 +137,6 @@ namespace UsabilityDynamics {
 
       // Do nothing if this has already been ran.
       if( API::$xml_rpc_done ) {
-        die( 'already ran' );
-
         return $methods;
       }
 
