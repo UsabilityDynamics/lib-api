@@ -212,11 +212,11 @@ namespace UsabilityDynamics {
         ob_end_clean();
       };
 
-      ob_start();
-
       if( is_string( $data ) ) {
-        echo( $data );
+        die( $data );
       }
+
+      ob_start();
 
       // Error Response.
       if( is_wp_error( $data ) ) {
