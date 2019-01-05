@@ -1,25 +1,25 @@
 {
-  "name": "usabilitydynamics/lib-api",
+  "name": "udx/lib-api",
   "keywords": [ "api" ],
   "type": "library",
   "require": {
-    "usabilitydynamics/lib-utility": "*"
+    "udx/lib-utility": "*"
   },
   "minimum-stability": "dev",
   "repositories": [
     {
       "type": "vcs",
-      "url": "https://github.com/UsabilityDynamics/lib-utility"
+      "url": "https://github.com/udx/lib-utility"
     },
     {
       "type": "vcs",
-      "url": "https://github.com/UsabilityDynamics/lib-api"
+      "url": "https://github.com/udx/lib-api"
     }
   ],
   "autoload": {
     "classmap": [ "lib" ]
   },
-  "homepage": "http://github.com/usabilitydynamics/lib-api",
+  "homepage": "http://github.com/udx/lib-api",
   "authors": [
     {
       "name": "Andy Potanin",
@@ -41,7 +41,7 @@
     }
   ],
   "support": {
-    "issues": "https://github.com/usabilitydynamics/lib-api/issues"
+    "issues": "https://github.com/udx/lib-api/issues"
   },
   "license": "MIT"
 }

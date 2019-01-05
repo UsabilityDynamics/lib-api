@@ -5,7 +5,7 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/UsabilityDynamics/lib-api"
+    "url": "https://github.com/udx/lib-api"
   },
   "main": "scripts/settings",
   "engines": {
